@@ -23,7 +23,7 @@ export default function Header() {
                     onMouseEnter={handleMedicoMouseEnter}
                     onMouseLeave={handleMedicoMouseLeave}
                 >
-                    <Link href="/medico">Médicos</Link>
+                    <Link href="">Médicos</Link>
                     {isMedicoOpen && (
                         <ul className={styles.dropdown}>
                             <li><Link href="/medicos/listar">Listar Registros</Link></li>
@@ -39,7 +39,7 @@ export default function Header() {
                     onMouseEnter={handlePacienteMouseEnter}
                     onMouseLeave={handlePacienteMouseLeave}
                 >
-                    <Link href="/paciente">Paciente</Link>
+                    <Link href="">Paciente</Link>
                     {isPacienteOpen && (
                         <ul className={styles.dropdown}>
                             <li><Link href="/paciente/listar">Listar Registros</Link></li>
