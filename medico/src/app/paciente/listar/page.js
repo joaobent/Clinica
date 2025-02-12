@@ -58,6 +58,7 @@ export default function Pacientes() {
                                 <th>Nome</th>
                                 <th>Telefone</th>
                                 <th>Email</th>
+                                <th>CPF</th>
                                 
                             </tr>
                         </thead>
@@ -68,6 +69,7 @@ export default function Pacientes() {
                                     <td>{paciente.nome}</td>
                                     <td>{paciente.telefone}</td>
                                     <td>{paciente.email}</td>
+                                    <td>{paciente.cpf}</td>
                                 </tr>
                             ))}
                         </tbody>
