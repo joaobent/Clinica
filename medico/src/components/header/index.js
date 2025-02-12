@@ -19,7 +19,7 @@ export default function Header() {
 
     return (
         <header className={styles.header}>
-            <img className={styles.logo} src="/img/logo.png" alt="Clínica Vitalidade" />
+            <img className={styles.logo} src="/img/logo2.png" alt="Clínica Vitalidade" />
             <ul className={styles.lista}>
                 <li className={styles.home}><Link href="/">Home</Link></li>
                 <li
