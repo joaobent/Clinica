@@ -6,12 +6,16 @@ import styles from "./header.module.css";
 export default function Header() {
     const [isMedicoOpen, setIsMedicoOpen] = useState(false);
     const [isPacienteOpen, setIsPacienteOpen] = useState(false);
+    const [isConsultaOpen, setIsConsultaOpen] = useState(false);
 
     const handleMedicoMouseEnter = () => setIsMedicoOpen(true);
     const handleMedicoMouseLeave = () => setIsMedicoOpen(false);
 
     const handlePacienteMouseEnter = () => setIsPacienteOpen(true);
     const handlePacienteMouseLeave = () => setIsPacienteOpen(false);
+    
+    const handleConsultaMouseEnter = () => setIsConsultaOpen(true);
+    const handleConsultaMouseLeave = () => setIsConsultaOpen(false);
 
     return (
         <header className={styles.header}>
@@ -39,7 +43,7 @@ export default function Header() {
                     onMouseEnter={handlePacienteMouseEnter}
                     onMouseLeave={handlePacienteMouseLeave}
                 >
-                    <Link href="">Paciente</Link>
+                    <Link href="">Pacientes</Link>
                     {isPacienteOpen && (
                         <ul className={styles.dropdown}>
                             <li><Link href="/paciente/listar">Listar Registros</Link></li>
@@ -50,7 +54,21 @@ export default function Header() {
                         </ul>
                     )}
                 </li>
-                <li className={styles.consulta}><Link href="/consulta">Consulta</Link></li>
+                <li
+                    className={styles.consulta}
+                    onMouseEnter={handleConsultaMouseEnter}
+                    onMouseLeave={handleConsultaMouseLeave}
+                >
+                    <Link href="">Consultas</Link>
+                    {isConsultaOpen && (
+                        <ul className={styles.dropdown}>
+                            <li><Link href="/consulta/listar">Listar Consultas</Link></li>
+                            <li><Link href="/consulta/adicionar">Agendar Consulta</Link></li>
+                            <li><Link href="">Reagendar</Link></li>
+                            <li><Link href="">Cancelar</Link></li>
+                        </ul>
+                    )}
+                </li>
             </ul>
         </header>
     );
