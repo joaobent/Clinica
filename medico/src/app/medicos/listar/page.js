@@ -7,7 +7,7 @@ const urlPadrao = "https://api-clinica-2a.onrender.com/medicos";
 
 export default function Medicos() {
     const [medicos, setMedicos] = useState([]);
-    const [medicosPorNome, setMedicosPorNome] = useState([]);
+    const [pesquisa, setPesquisa] = useState("");
 
     async function apresetarTodosMedicos() {
         try {
@@ -22,22 +22,13 @@ export default function Medicos() {
         }
     }
 
-    async function pesquisarMedicoPorNome(nome) {
-        try {
-            const response = await fetch(`${urlPadrao}?nome=${nome}`);
-            if (!response.ok) {
-                throw new Error("Erro ao buscar dados:" + response.statusText);
-            }
-            const data = await response.json();
-            setMedicosPorNome(data);
-        } catch (error) {
-            console.log('Ocorreu algum erro:' + error);
-        }
-    }
-
     useEffect(() => {
         apresetarTodosMedicos();
     }, []);
+
+    const medicoFiltrados = medicos.filter((medico) =>
+        medico.nome.toLowerCase().includes(pesquisa.toLowerCase())
+    );
 
     return (
         <div className={styles.body}>
@@ -52,18 +43,10 @@ export default function Medicos() {
                     <input
                         type="text"
                         placeholder="Pesquisar médico por nome..."
-                        onChange={(e) => pesquisarMedicoPorNome(e.target.value)}
+                        value={pesquisa}
+                        onChange={(e) => setPesquisa(e.target.value)}
                     />
                 </div>
-
-                {/* Lista de médicos filtrados */}
-                {medicosPorNome.length > 0 && (
-                    <ul className={styles.lista}>
-                        {medicosPorNome.map((medico) => (
-                            <li key={medico.id}>{medico.nome}</li>
-                        ))}
-                    </ul>
-                )}
 
                 {/* Tabela de médicos */}
                 <div className={styles.tabela}>
@@ -78,7 +61,7 @@ export default function Medicos() {
                             </tr>
                         </thead>
                         <tbody>
-                            {medicos.map((medico) => (
+                            {medicoFiltrados.map((medico) => (
                                 <tr key={medico.id}>
                                     <td>{medico.id}</td>
                                     <td>{medico.nome}</td>
