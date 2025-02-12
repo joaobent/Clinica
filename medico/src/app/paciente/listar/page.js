@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Header from "@/components/header";
 import styles from "./paciente.module.css";
 
-const urlPadrao = "http://localhost:9000/pacientes";
+const urlPadrao = "https://api-clinica-2a.onrender.com/pacientes";
 
 export default function Pacientes() {
     const [pacientes, setPacientes] = useState([]);
@@ -58,7 +58,7 @@ export default function Pacientes() {
                                 <th>Nome</th>
                                 <th>Telefone</th>
                                 <th>Email</th>
-                                <th>Data de Nascimento</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -68,7 +68,6 @@ export default function Pacientes() {
                                     <td>{paciente.nome}</td>
                                     <td>{paciente.telefone}</td>
                                     <td>{paciente.email}</td>
-                                    <td>{paciente.dataNascimento}</td>
                                 </tr>
                             ))}
                         </tbody>

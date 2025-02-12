@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Header from '@/components/header';
 import styles from "./consulta.module.css";
 
-const urlPadrao = "http://localhost:9000/medicos";
+const urlPadrao = "https://api-clinica-2a.onrender.com/consultas";
 
 export default function Medicos() {
     const [medicos, setMedicos] = useState([]);
