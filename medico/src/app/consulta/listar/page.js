@@ -71,9 +71,9 @@ export default function Medicos() {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nome</th>
-                                <th>Telefone</th>
-                                <th>Email</th>
+                                <th>Médicos</th>
+                                <th>Especialidade</th>
+                                <th>Pacientes</th>
                                 <th>Especialidade</th>
                             </tr>
                         </thead>
@@ -81,10 +81,10 @@ export default function Medicos() {
                             {medicos.map((medico) => (
                                 <tr key={medico.id}>
                                     <td>{medico.id}</td>
-                                    <td>{medico.nome}</td>
-                                    <td>{medico.telefone}</td>
-                                    <td>{medico.email}</td>
+                                    <td>{medico.medico}</td>
                                     <td>{medico.especialidade}</td>
+                                    <td>{medico.paciente}</td>
+                                    <td>{medico.tipo}</td>
                                 </tr>
                             ))}
                         </tbody>
