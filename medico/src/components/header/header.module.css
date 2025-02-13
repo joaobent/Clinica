@@ -137,7 +137,7 @@
 @media (max-width: 397px) {
     .header {
         
-        padding: 10px; /* Reduz o espaçamento */
+        padding: 15px; /* Reduz o espaçamento */
         align-items: center;
         justify-content: center;
     }
