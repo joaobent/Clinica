@@ -136,7 +136,6 @@
 /* Para telas muito pequenas, como 397px */
 @media (max-width: 397px) {
     .header {
-        
         padding: 15px; /* Reduz o espaçamento */
         align-items: center;
         justify-content: center;
@@ -161,9 +160,10 @@
     }
 
     .dropdown {
-        position: static; /* Coloca o dropdown abaixo dos itens */
         top: auto;
-        left: auto;
-        width: 100%; /* Ajusta o tamanho do dropdown */
+        width: 88px; /* Garante que o dropdown ocupe a largura máxima da tela */
+        max-width: 150px; /* Limita a largura máxima do dropdown */
+        padding: 0;
+        right: -14px;
     }
 }
