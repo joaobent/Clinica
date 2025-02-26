@@ -97,7 +97,7 @@
 .tabela td {
     padding: 12px; /* Menor padding para tabelas pequenas */
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #8d8d8d;
 }
 
 .tabela th {
@@ -108,7 +108,7 @@
 }
 
 .tabela tr:hover {
-    background-color: #f1f1f1;
+    background-color: #dadada;
 }
 
 .tabela td {
@@ -139,7 +139,7 @@
     }
 
     .botoes button {
-        width: 60%;
+        width: 30%;
         padding: 10px;
         margin: auto;
     }
