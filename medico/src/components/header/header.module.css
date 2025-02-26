@@ -134,7 +134,7 @@
 }
 
 /* Para telas muito pequenas, como 397px */
-@media (max-width: 397px) {
+@media (max-width: 500px) {
     .header {
         padding: 15px; /* Reduz o espaçamento */
         align-items: center;
